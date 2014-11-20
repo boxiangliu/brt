@@ -9,3 +9,5 @@ License: GPL-2
 LazyData: true
 Imports:
     stringr (>= 0.6.2)
+URL: https://github.com/lbxjollier/brt
+BugReports: https://github.com/lbxjollier/brt/issues
