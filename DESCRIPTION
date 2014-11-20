@@ -1,0 +1,11 @@
+Package: brt
+Title: Bioinformatician's R Toolbox
+Version: 0.1
+Authors@R: "Bosh Liu <bliu2@stanford.edu> [aut, cre]"
+Description: BRT implements functions to boost bioinformatician's productivity.
+Depends:
+    R (>= 3.1.1)
+License: GPL-2
+LazyData: true
+Imports:
+    stringr (>= 0.6.2)
