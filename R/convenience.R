@@ -1,3 +1,5 @@
+#' @title Extract basename
+#' @name basename.2
 #' @description Return the basename of a file name without path or extension.
 basename.2 <- function(names, extension){
   base.extension = basename(names)
@@ -9,7 +11,7 @@ basename.2 <- function(names, extension){
 #' @description Display correlation on pairs() function.
 #' @title Display correlation on pairs() function.
 #' @seealso \code{pairs()} function help where this function is scraped.
-
+#' @name panel.cor()
 panel.cor <- function(x, y, digits = 4, prefix = "", cex.cor, ...)
 {
   usr <- par("usr"); on.exit(par(usr))
@@ -50,6 +52,7 @@ read.counts <- function(path = '.', extension = ".Aligned.out.count", remove.emp
 }
 
 #' @title Merge Technical Duplicates in a Count Matrix
+#' @name merge.counts
 #' @description Merge the technical duplicate that has the same sample name but different extensions
 #' @seealso \code{read.counts()}
 #' @examples # merging the 4 lanes from NextSeq RNAseq data
