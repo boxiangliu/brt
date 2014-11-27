@@ -4,7 +4,7 @@
 \title{Generate a Count Matrix}
 \usage{
 read.counts(path = ".", extension = ".Aligned.out.count",
-  empty.remove = TRUE, log = FALSE)
+  remove.empty.rows = TRUE, log = FALSE)
 }
 \value{
 A count matrix in class data.frame

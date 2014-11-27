@@ -28,7 +28,7 @@ panel.cor <- function(x, y, digits = 4, prefix = "", cex.cor, ...)
 #' # "Aligned.out.count" in directory "~/RNAseq" I would:
 #' read.counts(path = '~/RNAseq', extension = 'Aligned.out.count')
 #' @title Generate a Count Matrix
-read.counts <- function(path = '.', extension = ".Aligned.out.count", empty.remove = TRUE, log = FALSE){
+read.counts <- function(path = '.', extension = ".Aligned.out.count", remove.empty.rows = TRUE, log = FALSE){
   pattern = paste0("*", extension)
   filenames = list.files(path = path, pattern = pattern ,full.names = TRUE)
   files = lapply(filenames, read.table, header = FALSE)
@@ -41,7 +41,7 @@ read.counts <- function(path = '.', extension = ".Aligned.out.count", empty.remo
     if (dim(counts)[1] != dim(files[i][[1]])[1]) {stop("count matrix and count file dimensions do not agree")}
     counts[,i] = files[i][[1]][,2]
   }
-  if (empty.remove) {counts = counts[rowSums(counts) != 0, ]} # remove empty rows
+  if (remove.empty.rows) {counts = counts[rowSums(counts) != 0, ]} # remove empty rows
   counts = counts[-((nrow(counts)-2):nrow(counts)),] # remove extra lines
   colnames(counts) = make.names(colnames(counts))
   counts = as.data.frame(counts)
